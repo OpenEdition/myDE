@@ -44,6 +44,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $visitedAt = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $locale = null;
+
     public function __toString(): string
     {
         // todo: do we remove as it break easy admin ? probably not
@@ -186,6 +189,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setVisitedAt(?\DateTimeImmutable $visitedAt): static
     {
         $this->visitedAt = $visitedAt;
+
+        return $this;
+    }
+
+    public function getLocale(): ?string
+    {
+        return $this->locale;
+    }
+
+    public function setLocale(?string $locale): static
+    {
+        $this->locale = $locale;
 
         return $this;
     }

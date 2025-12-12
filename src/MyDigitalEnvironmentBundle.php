@@ -13,6 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
 
 class MyDigitalEnvironmentBundle extends AbstractBundle
 {
@@ -53,12 +54,19 @@ class MyDigitalEnvironmentBundle extends AbstractBundle
 
         $container->services()
             ->set(LocaleListener::class)
+            ->arg('$security', new Reference(Security::class))
+            ->arg('$localeAwareServices', tagged_iterator('kernel.locale_aware'))
+            ->arg('$entityManager', new Reference(EntityManagerInterface::class))
             ->tag('kernel.event_listener', [
                 'event' => 'kernel.request',
-                'priority' => 512,
+                'priority' => -32,
             ])
             ->tag('kernel.event_listener', [
                 'event' => 'kernel.response',
+                'priority' => 512,
+            ])
+            ->tag('kernel.event_listener', [
+                'event' => 'kernel.terminate',
                 'priority' => 512,
             ])
         ;
