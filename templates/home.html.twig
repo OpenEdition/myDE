@@ -1,0 +1,23 @@
+{% extends '@MyDigitalEnvironment/base.html.twig' %}
+
+{% block title %}My Digital Environment | Home{% endblock %}
+{% block navTitle %}Home{% endblock %}
+
+{% block content %}
+    <p>
+        {% trans %}Welcome to the home page of My Digital Environment{% endtrans %}
+    </p>
+    {% if applications is not empty %}
+        {# todo: Make applications into a macro/widget #}
+        <p class="fw-bold mb-0 ms-3">Applications :</p>
+        <div class="list-group">
+            {% for application in applications %}
+                {# Todo : see about how to limit the max width of the links #}
+                <a class="list-group-item list-group-item-action"
+                   href="{{ path(application.route_id) }}">
+                    {{ application.description }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

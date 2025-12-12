@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="nkmLfZK" resname="registerpage.title">
+        <source>registerpage.title</source>
+        <target>Register page</target>
+      </trans-unit>
+      <trans-unit id="9oECW4b" resname="login.register">
+        <source>login.register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="wmlqBMk" resname="login.sign.in">
+        <source>login.sign.in</source>
+        <target>Sign in</target>
+      </trans-unit>
+      <trans-unit id="mu6cKMq" resname="loginpage.title">
+        <source>loginpage.title</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="uxuki36" resname="login.h1">
+        <source>login.h1</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="2Hws56t" resname="login.email.label">
+        <source>login.email.label</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="L8T4BiK" resname="login.password.label">
+        <source>login.password.label</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="8t6Cgl." resname="nav.logout">
+        <source>nav.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="aKunIoV" resname="missing.title.page">
+        <source>missing.title.page</source>
+        <target>Page with missing title</target>
+      </trans-unit>
+      <trans-unit id="LR8ogR." resname="welcome.title">
+        <source>welcome.title</source>
+        <target>Welcome!</target>
+      </trans-unit>
+      <trans-unit id="E_7q2FO" resname="rform.email">
+        <source>rform.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="rBIL7bR" resname="rform.email.example">
+        <source>rform.email.example</source>
+        <target>name.surname@example.com</target>
+      </trans-unit>
+      <trans-unit id="AAB5EuF" resname="rform.name">
+        <source>rform.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="1pNWaAO" resname="rform.surname">
+        <source>rform.surname</source>
+        <target>Surname</target>
+      </trans-unit>
+      <trans-unit id="ycS6mvK" resname="rform.password">
+        <source>rform.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="LLdNXyL" resname="rform.password.repeat">
+        <source>rform.password.repeat</source>
+        <target>Repeat Password</target>
+      </trans-unit>
+      <trans-unit id="EQlEKAm" resname="rform.register">
+        <source>rform.register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="IADtnZz" resname="uform.password">
+        <source>uform.password</source>
+        <target>New password</target>
+      </trans-unit>
+      <trans-unit id="mZM78i9" resname="uform.password.repeat">
+        <source>uform.password.repeat</source>
+        <target>Repeat new password</target>
+      </trans-unit>
+      <trans-unit id="8mqrGWf" resname="uform.password.validate">
+        <source>uform.password.validate</source>
+        <target>Enter password to validate changes</target>
+      </trans-unit>
+      <trans-unit id="edbFUnK" resname="uform.save">
+        <source>uform.save</source>
+        <target>Save</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

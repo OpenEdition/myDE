@@ -1,0 +1,10 @@
+{% extends '@MyDigitalEnvironment/split.html.twig' %}
+{% trans_default_domain 'my-de' %}
+
+{% block title %}{{ 'registerpage.title'|trans }}{% endblock %}
+
+{% block rightsplit %}
+    <h1 class="h3 mb-3 font-weight-normal text-center">{{ 'login.register'|trans }}</h1>
+    {{ form(form) }}
+    <a class="btn btn-outline-primary" href="{{ path('my_digital_environment_user_login') }}">{{ 'login.sign.in'|trans }}</a>
+{% endblock %}

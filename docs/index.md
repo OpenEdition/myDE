@@ -1,0 +1,1 @@
+My Digital Environment is a Symfony bundle provided by OpenEdition, allow the quick setup of an ENT that can then be further extended

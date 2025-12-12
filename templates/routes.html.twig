@@ -1,0 +1,40 @@
+{% extends "@MyDigitalEnvironment/base.html.twig" %}
+
+{% block title %}Routes{% endblock %}
+
+{% block body %}
+    <h1>Routes</h1>
+
+    <style>
+        table, th, td {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px 10px;
+        }
+    </style>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Route</th>
+            <th scope="col">Path</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for name, route in routes %}
+            <tr>
+                <th scope="row">
+                    {% if route.requirements|length == 0 %}
+                        <a href="{{ path(name) }}">{{ name }}</a>
+                    {% else %}
+                        {{ name }}
+                    {% endif %}
+                </th>
+                <td>{{ route.path }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

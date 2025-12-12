@@ -1,0 +1,59 @@
+{% extends '@MyDigitalEnvironment/split.html.twig' %}
+{% trans_default_domain 'my-de' %}
+
+{% block title %}{{ 'loginpage.title'|trans }}{% endblock %}
+
+
+{% block rightsplit %}
+    {# Todo : improve form handling and move to dedicated form class ? #}
+    {# moving maybe not be needed or usefull in this as the FormLoginAuthenticator by Symfony handle it #}
+    <h1 class="h3 mb-3 font-weight-normal text-center">{{ 'login.h1'|trans }}</h1>
+    {% if app.user %}
+        <div class="mb-3">
+            {# todo: translate this #}
+            You are logged in as {{ app.user.userIdentifier }},
+            <a href="{{ path('my_digital_environment_user_logout') }}">Logout</a>
+        </div>
+    {% else %}
+        <form action="{{ path('my_digital_environment_user_login') }}" method="post">
+
+            <label for="username">{{ 'login.email.label'|trans }}</label>
+            <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control"
+                   autocomplete="email" required autofocus>
+
+            <label for="password">{{ 'login.password.label'|trans }}</label>
+            <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password"
+                   required>
+
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+
+            {# If you want to control the URL the user is redirected to on success #}
+            <input type="hidden" name="_target_path" value="{{ path('my_digital_environment_landing') }}">
+
+            {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <input type="checkbox" name="_remember_me" id="_remember_me">
+                <label for="_remember_me">Remember me</label>
+            </div>
+            #}
+
+            <div class="mt-2">
+                <button class="btn btn-primary" type="submit">
+                    {{ 'login.sign.in'|trans }}
+                </button>
+                <a class="btn btn-outline-primary" href="{{ path('my_digital_environment_user_register') }}">{{ 'login.register'|trans }}</a>
+            </div>
+
+            {% block extra%}{% endblock %}
+
+            {% if error %}
+                <div class="alert alert-danger mt-2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+        </form>
+    {% endif %}
+{% endblock %}

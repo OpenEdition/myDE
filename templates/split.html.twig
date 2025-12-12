@@ -1,0 +1,55 @@
+{% extends '@MyDigitalEnvironment/skeleton.html.twig' %}
+{% trans_default_domain "my-de" %}
+
+{% block title %}{{ "missing.title.page"|trans }}{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .circle-background {
+            background-color: #e5e5f7;
+            opacity: 0.8;
+            background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px), repeating-linear-gradient(#72d05655, #72d056);
+        }
+
+        .circle-background > * {
+            background: white;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="circle-background">
+        <div class="container vh-100 shadow">
+            {% block inSplitContainer %}
+                <div class="row vh-100">
+                    <div class="col-sm vh-100 border-end border-end py-3">
+                        {% include '@MyDigitalEnvironment/blurb.html.twig' %}
+                    </div>
+                    <div class="col-sm vh-100 py-3">
+                        {% block rightsplit %}{% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+    <div class="dropdown" style="position: absolute; top: 0; right: 0; padding: 0.1875rem .375rem">
+        <a class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
+           style="padding: 0.1875rem .375rem">
+            {% if app.locale == 'fr' %}
+                <span class="fi fi-fr"></span>
+            {% else %}
+                <span class="fi fi-gb"></span>
+            {% endif %}
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                {% set par = app.current_route_parameters | merge({lang: 'en'}) %}
+                <a class="dropdown-item" href="{{ path(app.current_route, par)}}"><span class="fi fi-gb"></span> English</a>
+            </li>
+            <li>
+                {% set par = app.current_route_parameters | merge({lang: 'fr'}) %}
+                <a class="dropdown-item" href="{{ path(app.current_route, par)}}"><span class="fi fi-fr"></span> Français</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
