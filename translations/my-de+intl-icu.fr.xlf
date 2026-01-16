@@ -89,6 +89,10 @@
         <source>uform.save</source>
         <target>Sauvegarder</target>
       </trans-unit>
+      <trans-unit id="sdfdcvxcvdd" resname="rform.email.label">
+        <source>rform.email.label</source>
+        <target>Email</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
